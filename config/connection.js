@@ -3,15 +3,24 @@ var mysql = require("mysql");
 
 // Set up our connection information
 var connection = mysql.createConnection({
+  user: 'root',
+  password: 'password',
+  server: 'localhost',
   port: 3306,
-  host: "localhost",
-  user: "root",
-  password: "password",
-  database: "burger_db"
+  database: 'burger_db',
+  insecureAuth: true,
+  dialect: 'mysql',
+  multipleStatements: true,
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
 });
 
 // Connect to the database
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
