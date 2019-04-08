@@ -8,6 +8,7 @@ var connection = mysql.createConnection({
   server: 'localhost',
   port: 3306,
   database: 'burger_db',
+  socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock',
   insecureAuth: true,
   dialect: 'mysql',
   multipleStatements: true,
