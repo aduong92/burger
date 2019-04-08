@@ -19,7 +19,6 @@ var connection = mysql.createConnection({
   }
 });
 
-connection.end();
 
 // Connect to the database
 connection.connect(function (err) {
