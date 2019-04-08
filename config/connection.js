@@ -10,6 +10,7 @@ var connection = mysql.createConnection({
   database: 'burger_db',
   insecureAuth: true,
   dialect: 'mysql',
+  socketPath: '/var/run/mysqld/mysqld.sock',
   multipleStatements: true,
   pool: {
     max: 5,
